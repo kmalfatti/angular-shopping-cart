@@ -1,0 +1,188 @@
+* {
+  margin: 0
+}
+
+#header {
+  text-align: center;
+  background-color: rgb(253, 127, 92);
+}
+
+#header p {
+  font-size: 2em;
+  color: white; 
+}
+
+#welcome h1 {
+  padding: 30px 0; 
+  color: rgb(253, 127, 92);
+  font-size: 4em;
+  font-style: italic;
+}
+
+nav {
+  background-color: rgb(252, 249, 252);
+  border-radius: 3px;
+  border: 0.1px solid rgb(224,224,224);
+}
+
+nav div ul li {
+  padding: 14px 10px;
+  display: inline-block;
+}
+
+nav div ul {
+  margin-left: -40px;
+}
+
+nav div ul li:first-child{
+  padding-left: 0;
+}
+
+nav div ul li a {
+  font-size: 1em;
+  text-decoration: none;
+  color: gray;
+}
+
+#search a {
+  float: right;
+}
+
+#search {
+  margin-top: 30px; 
+}
+
+#search *{
+  /*margin-top: 30px;*/
+  display: inline-block;
+}
+
+#search button {
+  margin-bottom: 5px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  height: 30px;
+  background-color: rgb(255, 97, 81);
+}
+
+.wrapper{
+  /*border: 1px solid black;*/
+  margin: 0 auto;
+  width: 780px;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  /*border: 1px solid gray;*/
+}
+
+table, th, td {
+  border: 1px solid gray;
+}
+
+table * {
+  /*border: 1px solid gray;*/
+}
+
+th {
+  padding-left: 12px;
+  text-align: left;
+}
+
+.info {
+  margin-left: -30px;
+}
+
+td button{
+  background-color: rgb(246, 181, 101);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+#tea {
+  padding-left: 12px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+
+td ul li {
+  list-style: none;
+  padding: 2px;
+}
+
+#catagory li {
+  list-style: disc;
+}
+
+#quantity {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+li, p, button, h1, th, option, h3{
+  font-family: arial, sans-serif;
+}
+
+span {
+  float: right;
+}
+
+#infoHead *{
+  display: inline-block;
+}
+
+#quantityRight {
+  float: right;
+}
+  
+.bagTotal {
+  padding-top: 10px;
+}
+
+.bagTotal *{
+  display: inline-block;
+}  
+
+#total{
+  float: right;
+}
+
+.data {
+  text-align: center;
+}
+
+#remove {
+  background-color: rgb(255, 97, 81);
+}
+
+#product {
+  padding: 12px; 
+}
+
+.th {
+  padding: 0 4px; 
+  min-width: 100px;
+  text-align: center;
+}
+
+#placeOrder {
+  margin: 5px 4px 0 0;
+  float: right;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#editQuantity {
+  border: 1px solid gray;
+  width: 50px;
+  font-size: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+<main>
+{{vm.cart}}
+  <div class="bagTotal">
+    <h3>My Shopping Bag</h3>
+    <h3 id="total">Order total: {{vm.getTotal(vm) | currency}}</h3>
+  </div>
+  <table>
+    <thead>
+      <th>Product</th>
+      <th class="th">Quantity</th>
+      <th class="th">Sub-total</th>
+      <th class="th"></th>
+    </thead>
+    <tr ng-repeat='item in vm.cart'>
+      <td id="product">
+        <h3>{{item.info.name}}</h3>
+        <img src="{{item.info.imageUrl}}" alt="">
+        <p><b>Caffeine Scale:</b> {{item.info.caffeineScale}}</p>
+        <p><b>Ingredients:</b> {{item.info.ingredients}}</p>
+        <p><b>Rating:</b> {{item.info.rating}}</p>
+      </td>
+      <td class="data">
+        <input id='editQuantity' type="text" ng-show='editQuantity' ng-value='{{item.quantity}}' autofocus onfocus="this.value=this.value" ng-model='newQuantity'>
+        <!-- TODO: fix onfocus -->
+        <p ng-show='!editQuantity'>{{item.quantity}}</p>
+      </td>
+      <td class="data">
+        <p>{{item.quantity * (item.info.price)/100 | currency}}</p>
+      </td>
+      <td class="data">
+      <div>
+        <button ng-show='!editQuantity' ng-click="editQuantity = !editQuantity">Edit</button>
+        <button ng-show='editQuantity' ng-click='editQuantity = !editQuantity; vm.updateQuantity(item, newQuantity)'>Save</button>
+        <button id="remove" ng-click='vm.removeItem(vm, item)'>Remove</button>
+      </div>
+      </td>
+    </tr>
+  </table>
+  <button id="placeOrder">Place Order</button>
+</main>

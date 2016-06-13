@@ -1,0 +1,79 @@
+<main>
+ 
+  <div id="search">
+    <p>Search by cattagory</p>
+    <select ng-model='filterCatagory'>
+      <option value=""></option>
+      <option value="dark">Dark</option>
+      <option value="cold">Cold</option>
+      <option value="awesome">Awesome</option>
+      <option value="dry">Dry</option>
+      <option value="hot">Hot</option>
+      <option value="summer">Summer</option>
+      <option value="lucid">Lucid</option>
+      <option value="warm">Warm</option>
+      <option value="winter">Winter</option>
+      <option value="spring">Spring</option>
+    </select>
+
+    <p>Search by name:</p>
+    <input type="text" ng-model='searchText'>
+
+    <a href="/checkout"><button>Checkout | {{vm.getTotal(vm) | currency}}</button></a>
+  </div>
+
+  <table>
+    <thead>
+      <th>Tea</th>
+      <th>Information
+      
+        <span>Sort By Price:
+          <select ng-model='sortPrice'>
+            <option value="price">Lowest</option>
+            <option value="-price">Highest</option>
+          </select>
+        </span>
+      </th>
+    </thead>
+<!-- {{vm.items[0]}} -->
+    <!-- <tr ng-repeat='item in vm.items'></tr> -->
+      <tr ng-repeat='item in vm.items | orderBy:sortPrice | filter:filterCatagory | filter:searchText'>
+        <td><img src="{{item.imageUrl}}" alt=""></td>
+        <td>
+        <div id="infoHead">
+          <p id="tea">{{item.name}}</p>
+          <div id="quantityRight">
+            <p id="quantity">Quantity</p>
+            <select name="" id="" ng-model='quantity' ng-init='quantity="1"'>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <button ng-click='vm.addToCart(item, quantity)' ng-click='vm.getTotal()'>Add To Bag</button>
+          </div>
+        </div>
+
+          <ul class="info">
+            <li><b>Price:</b> {{item.price/100 | currency}}</li>
+            <li><b>Caffeine Scale:</b> {{item.caffeineScale}}</li>
+            <li><b>Ingredients:</b> {{item.ingredients}}</li>
+            <li><b>Rating:</b> {{item.rating}}</li>
+            <li><b>In Stock?</b> {{item.inStock?'Yes':'No'}}</li>
+            <li><b>Catagories:</b>
+              <ul id="catagory" ng-repeat='cat in item.categories'>
+                <li>{{cat}}</li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      </div>
+    </table>
+</main>
