@@ -7,6 +7,7 @@
 function checkoutService(){
     this.cart = {};
     this.addToCart = function(item, quantity) {
+        console.log(item, quantity)
         if (this.cart[item.name]) {
          this.cart[item.name].quantity += Number(quantity);
         } else {
@@ -17,20 +18,14 @@ function checkoutService(){
 
         }
     }
-    this.total = function(vm){
-    // console.log('yo')
-    // console.log(Object.keys(vm.cart).length)
+    this.total = function(){
         var total = 0;
-        if (vm){
-            for(var key in vm.cart) {
-                // console.log(vm.cart[key].quantity)
-                total += ((vm.cart[key].quantity) * vm.cart[key].info.price/100)
-            }
+            for(var key in this.cart) {
+                total += ((this.cart[key].quantity) * this.cart[key].info.price/100)
         }
         return total;
     }   
     this.update = function(item, newQuantity){
-        console.log('serv', item.quantity)
         item.quantity = Number(newQuantity);
     }
     this.removeItem = function(vm, item){

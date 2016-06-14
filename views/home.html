@@ -35,8 +35,6 @@
         </span>
       </th>
     </thead>
-<!-- {{vm.items[0]}} -->
-    <!-- <tr ng-repeat='item in vm.items'></tr> -->
       <tr ng-repeat='item in vm.items | orderBy:sortPrice | filter:filterCatagory | filter:searchText'>
         <td><img src="{{item.imageUrl}}" alt=""></td>
         <td>
