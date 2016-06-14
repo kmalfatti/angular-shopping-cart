@@ -18,8 +18,8 @@
       function checkoutController(checkoutService){
         var vm = this;
         vm.cart = checkoutService.cart;
-        vm.getTotal = function(vm){
-          return checkoutService.total(vm);
+        vm.getTotal = function(){
+          return checkoutService.total();
         }
         vm.updateQuantity = function(item, newQuantity){
           newQuantity = Number(newQuantity)
@@ -28,7 +28,6 @@
           }
         }
         vm.removeItem = function(vm, item){
-          console.log('Hey')
           return checkoutService.removeItem(vm, item)
 
         }
